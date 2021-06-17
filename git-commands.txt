@@ -3,15 +3,17 @@
 							.............................................. EXAMPLE GIT COMMANDS  .................................................
 							......................................................................................................................
 
+Install git and git bash(not necesssary buta good practice
 
+1. Introduction
 ## Clone existing repository
 -- git clone https:\\............
 
 
 ## Check status of the current directory
---git status
+-- git status
 
-after updates to the folder this command should show:
+a. After updates to the folder this command should show:
 	""
 	On branch main
 	Your branch is up to date with 'origin/main'.
@@ -23,9 +25,46 @@ after updates to the folder this command should show:
 	nothing added to commit but untracked files present (use "git add" to track)
 	""
 
-
+b. In case of nested files it will only show the first level of folder
 
 ## Add new updates to git
 -- git add "file name"
+-- git add . 
+a. This will show all the updated files even if they are nested
+-- git add -ADD
+a. Handles both rename removing  via git as well as the system
+
+## To Commit
+-- git commit -m "..comment.."
+
+## Push to main branch
+-- git push -u origin main 
+
+
+2. Reset and restore
+## Reset commands before PUSHING after ADDING, the changes will still be available in the local directory
+-- git reset HEAD "file name"
+
+## Restore to previous version of the file after "reset",
+-- git restore "file name"
+
+3. Rename a file 
+-- git mv "old file name" "new file name" 
+
+4. Move a file from one folder to another
+-- git mv "file name" "directory name"
+
+5. Deleting a file
+
+## Stage a deletion 
+-- git rm "file name"
+
+## Stage reset
+-- git reset HEAD "file name"
+
+## restore
+-- git restore "file name"
+
+
 
 
