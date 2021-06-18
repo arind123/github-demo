@@ -31,11 +31,13 @@ b. In case of nested files it will only show the first level of folder
 -- git add "file name"
 -- git add . 
 a. This will show all the updated files even if they are nested
--- git add -ADD
+-- git add -A
 a. Handles both rename removing  via git as well as the system
 
 ## To Commit
 -- git commit -m "..comment.."
+-- git commit -am "..commit and add"
+a.express commit, do not try this use git add first
 
 ## Push to main branch
 -- git push -u origin main 
@@ -62,9 +64,35 @@ a. Handles both rename removing  via git as well as the system
 ## Stage reset
 -- git reset HEAD "file name"
 
-## restore
+## Restore
 -- git restore "file name"
 
 
+## Help
+-- git help "function name"
+a. This opens up a browser showing details of the function
 
+## History
+-- git log 
+a. Gives all the commits with the first one being the most recent one.
 
+-- git log --abbrev-commit
+a. Shortens the commit id
+
+-- git log --oneline --graph --decorate
+a. Shortened commit id and commit messege
+
+-- git log commit_id.....commit_id
+a. To get the commits in between two commit
+
+-- git log -- "file name"
+a. Get commit history of a specified file
+
+## Ignoring Files (IMPORTANT: Must add .gitignore file to any type of live industry level projects)
+Create .gitignore file. 
+Steps:
+1. Open Notepad.
+2. Add the contents of your gitignore file.
+3. Click "Save as" and select "all files".
+4. Save as .gitignore
+5. Each line should have one entry, that might be of three types , "filename.extenstion", "*.extension", "folder name"
