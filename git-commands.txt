@@ -96,3 +96,84 @@ Steps:
 3. Click "Save as" and select "all files".
 4. Save as .gitignore
 5. Each line should have one entry, that might be of three types , "filename.extenstion", "*.extension", "folder name"
+
+
+
+##Merging and Branching
+
+-- git branch "new branch name"
+a. To create a new branch
+
+-- git branch -a 
+a. to see the branches including remote branches
+-- git branch
+a. Only the local branches
+
+-- git checkout "branch name"
+a. To switch into the new branch
+
+-- git log --oneline --decorate
+
+-- git branch -m "old name" "new name"
+a. To rename a branch
+
+-- git branch -d "name the branch you want to delete"
+a. To delete a branch after it is of no use any longer
+
+-- git checkout -b "new branch name"
+a. Create and switch to the new branch with one statement
+
+-- Need to change to main branch from the newbranch before merging using: 
+
+-- git diff main "new branch name"
+a. checkout the differences between main branch and the new branch 
+
+-- git merge "branch name you want to merge with the main branch"
+a. To merge
+
+-- Exiting the vi editor. Try ESC :q!, 
+-- To save the document :wq
+-- To save the document and quit :wqa
+
+- git merge "branch name" --no-ff
+## No fast forward merge. This helps to showcase the merge much more clearly. Like what two branches were added, what were the changes.
+
+
+--git log --oneline --graph --decorate --all
+a. To see all the commits
+
+-- vi "file name"
+a. Edit files or see file contents from git bash in windows
+
+## Resolving Merge conflicts
+
+--ERROR Messege: Automatic Merges
+Auto-merging samplehtml.html
+CONFLICT (content): Merge conflict in samplehtml.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+-- We should be in a merging state -> main|MERGING
+
+-- git mergetool
+a. To visually check the conflicts of the same files in two branches
+
+** Working with mergetool vmdiff
+From left to right, top to the bottom:
+
+LOCAL – this is file from the current branch 
+BASE – common ancestor,how file looked before both changes 
+REMOTE – file you are merging into your branch 
+MERGED – merge result, this is what gets saved in the repo
+Move to the MERGED file (Ctrl + w, j)
+:diffg RE  " get from REMOTE
+:diffg BA  " get from BASE
+:diffg LO  " get from LOCAL
+
+Then git commit in main|MERGING and you are all set to merge
+
+
+
+
+
+
+
